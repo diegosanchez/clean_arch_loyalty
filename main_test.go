@@ -18,3 +18,7 @@ Lo planteamos desde el contexto de un backend en tecnologías Java y NodeJS.
 func Test_dummy(t *testing.T) {
 	assert.Equal(t, true, true, "dummy")
 }
+
+func Test_dummy_2(t *testing.T) {
+	assert.Equal(t, false, false, "dummy2")
+}
