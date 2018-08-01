@@ -6,6 +6,7 @@ import (
 )
 
 import "github.com/diegosanchez/clean_arch_loyalty/adapter"
+import "github.com/diegosanchez/clean_arch_loyalty/entity"
 
 /*
 Action items:
@@ -36,17 +37,16 @@ func Test_item_gateway(t *testing.T) {
 */
 
 func Test_caso_uso_item_loyalty_2_item_mayor_a_1200_envio_gratis(t *testing.T) {
-	uc := NewLoyaltyFreeShipping(adapter.NewTestItemGateway(), adapter.NewTestShippingOptionGateway(),
+	uc := NewLoyaltyFreeShipping(adapter.NewTestItemGateway(),
+		adapter.NewTestShippingOptionGateway(),
 		adapter.NewTestLoyaltyDM())
 
 	req := make(map[string]interface{})
+	req["item_id"] = entity.NewItemId("MLA", 12)
+	req["user_id"] = entity.NewUserId(879)
 	res := make(map[string]interface{})
 
 	uc.doWork(req, res)
-
-	// item := NewTestItemGateway().itemById(NewItemId("MLA", 12))
-	// loyalty := NewTestLoyaltyDM().loyaltyForUser(NewUser(987))
-	// shippingOpt := NewTestShippingOptionGateway().forItem(item)
 
 	assert.Equal(t, "xxxx", "xxxx", "choOptions - free")
 

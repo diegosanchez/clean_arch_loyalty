@@ -1,13 +1,6 @@
 package entity
 
-type Shipping struct {
-	item *Item
-}
-
-func NewShipping(item *Item) *Shipping {
-	result := new(Shipping)
-
-	result.item = item
-
-	return result
+type Shipping interface {
+	AsMapForReview(res *map[string]interface{}) *map[string]interface{}
+	PopulateMapForReview(res *map[string]interface{}) *map[string]interface{}
 }
