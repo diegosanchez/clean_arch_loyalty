@@ -12,12 +12,11 @@ func NewCustomShipping(item *Item) *CustomShipping {
 	return result
 }
 
-func (this *CustomShipping) AsMapForReview(res *map[string]interface{}) *map[string]interface{} {
+func (this *CustomShipping) AsMapForReview(res *Databag) *Databag {
 	shipping := this.item.ShippingBasedOnPrice(this)
 	return shipping.PopulateMapForReview(res)
 }
 
-func (this *CustomShipping) PopulateMapForReview(res *map[string]interface{}) *map[string]interface{} {
-	(*res)["review.shipping"] = "Envio GARPO!"
-	return res
+func (this *CustomShipping) PopulateMapForReview(res *Databag) *Databag {
+	return res.set("review.shipping", "Envio GARPO!")
 }
