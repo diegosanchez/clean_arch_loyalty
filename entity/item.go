@@ -1,11 +1,11 @@
 package entity
 
 type Item struct {
-	price int
+	price int64
 	id    *ItemId
 }
 
-func NewItem(id *ItemId, price int) *Item {
+func NewItem(id *ItemId, price int64) *Item {
 	result := new(Item)
 
 	result.id = id

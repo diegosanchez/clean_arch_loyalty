@@ -15,11 +15,8 @@ func NewTestItemGateway() *TestItemGateway {
 }
 
 func (this *TestItemGateway) ItemById(itemId *entity.ItemId) *entity.Item {
-
 	itemFromApi := this.itemFromApiFromFile(itemId)
 
-	// @TODO
-	// Como se hace este mapeo
 	return entity.NewItem(itemId, itemFromApi.BasePrice)
 }
 

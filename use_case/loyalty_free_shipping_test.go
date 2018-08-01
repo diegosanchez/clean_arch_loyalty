@@ -26,7 +26,7 @@ func Test_caso_uso_item_loyalty_2_item_mayor_a_1200_envio_gratis(t *testing.T) {
 	req := make(map[string]interface{})
 	res := make(map[string]interface{})
 
-	req["item_id"] = entity.NewItemId("MLA", 12)
+	req["item_id"] = entity.NewItemId("MLA", 653840397)
 	req["user_id"] = entity.NewUserId(879)
 
 	uc.doWork(req, res)
@@ -44,7 +44,7 @@ func Test_caso_uso_item_loyalty_4_item_menor_a_1200_envio_gratis(t *testing.T) {
 	req := make(map[string]interface{})
 	res := make(map[string]interface{})
 
-	req["item_id"] = entity.NewItemId("MLA", 50)
+	req["item_id"] = entity.NewItemId("MLA", 653840300)
 	req["user_id"] = entity.NewUserId(879)
 
 	uc.doWork(req, res)

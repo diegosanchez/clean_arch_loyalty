@@ -32,6 +32,8 @@ func (this *LoyaltyFreeShipping) doWork(req, res map[string]interface{}) {
 
 	shippingOpt := this.shippingOptGW.ForItem(item)
 
-	shippingOpt.AsMapForReview(&res)
+	dataBag := shippingOpt.AsMapForReview(entity.NewDatabag())
+
+	dataBag.AsMap(&res)
 
 }
